@@ -1,0 +1,393 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix utf: <https://www.ddeworld.org/ddeKG/base#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+utf:Time 
+  rdf:type owl:Thing ;
+  rdf:type skos:Concept ;
+  rdf:type skos:Collection ;
+  rdfs:subPropertyOf rdf:Property ;
+  rdfs:label "Unified Time Framework in Deep-time Digital Earth IUGS Big Science Program"@en ;
+  skos:prefLabel "Unified Time Framework in Deep-time Digital Earth IUGS Big Science Program"@en ;
+.
+
+
+utf:tr_id
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Time ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Time root id"@en ;
+.
+
+
+utf:tr_type
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Time ;
+  rdfs:range utf:Time_type ;
+  skos:prefLabel "Time root type"@en ;
+.
+
+
+utf:tr_description
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Time ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "Time root description"@en ;
+.
+
+
+utf:tr_expression
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Time ;
+  rdfs:range utf:Time_type ;
+  skos:prefLabel "Time root expression"@en ;
+.
+
+
+utf:tr_reference
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Time ;
+  rdfs:range utf:Time_reference ;
+  skos:prefLabel "Time root reference"@en ;
+.
+
+
+utf:tr_dating
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Time ;
+  rdfs:range utf:Time_dating ;
+  skos:prefLabel "Time root dating method"@en ;
+.
+
+
+utf:Time_type
+  rdf:type rdf:Class ;
+  skos:prefLabel "Time type class"@en ;
+.
+
+
+utf:Point_time
+  rdf:type rdf:Class ;
+  rdfs:subClassOf utf:Time_type ;
+  skos:prefLabel "Point time class"@en ;
+.
+
+
+utf:Interval_time
+  rdf:type rdf:Class ;
+  rdfs:subClassOf utf:Time_type ;
+  skos:prefLabel "Interval time class"@en ;
+.
+
+
+utf:Combination_time
+  rdf:type rdf:Class ;
+  rdfs:subClassOf utf:Time_type ;
+  skos:prefLabel "Combination time class"@en ;
+.
+
+
+utf:point_id
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Point_time ;
+  rdfs:range  xsd:string ;
+  skos:prefLabel "Point time id"@en ;
+.
+
+
+utf:point_value
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Point_time ;
+  rdfs:range  xsd:double ;
+  skos:prefLabel "Point time value"@en ;
+.
+
+
+utf:point_unit
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Point_time ;
+  rdfs:range  utf:Time_unit ;
+  skos:prefLabel "Point time unit"@en ;
+.
+
+
+utf:point_uncty
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Point_time ;
+  rdfs:range  xsd:double ;
+  skos:prefLabel "Point time uncertainty value"@en ;
+.
+
+
+utf:point_uncty_unit
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Point_time ;
+  rdfs:range  utf:Time_unit ;
+  skos:prefLabel "Point time uncertainty unit"@en ;
+.
+
+
+utf:interval_id
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Interval_time ;
+  rdfs:range  xsd:string ;
+  skos:prefLabel "Interval time id"@en ;
+.
+
+
+utf:interval_start
+  rdf:type rdf:Class ;
+  rdfs:subClassOf utf:Interval_time ;
+  skos:prefLabel "Interval start time class"@en ;
+.
+
+
+utf:interval_end
+  rdf:type rdf:Class ;
+  rdfs:subClassOf utf:Interval_time ;
+  skos:prefLabel "Interval end time class"@en ;
+.
+
+
+utf:interval_duration
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Interval_time ;
+  rdfs:range  xsd:double ;
+  skos:prefLabel "Interval time duration"@en ;
+.
+
+
+utf:interval_direction
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Interval_time ;
+  rdfs:range  xsd:boolean ;
+  skos:prefLabel "Interval time direction"@en ;
+.
+
+
+utf:cbn_id
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Combination_time ;
+  rdfs:range  xsd:string ;
+  skos:prefLabel "Combination time id"@en ;
+.
+
+
+utf:cbn_pointnum
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Combination_time ;
+  rdfs:range  xsd:float ;
+  skos:prefLabel "Combination point time number"@en ;
+.
+
+
+utf:cbn_intervalnum
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Combination_time ;
+  rdfs:range  xsd:float ;
+  skos:prefLabel "Combination interval time number"@en ;
+.
+
+
+utf:cbn_pointset
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Combination_time ;
+  rdfs:range  utf:Point_time ;
+  skos:prefLabel "Combination point time set"@en ;
+.
+
+
+utf:cbn_intervalset
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Combination_time ;
+  rdfs:range  utf:Interval_time ;
+  skos:prefLabel "Combination interval time set"@en ;
+.
+
+
+utf:Time_unit
+  rdf:type rdf:Class ;
+  skos:prefLabel "Time unit class"@en ;
+.
+
+
+utf:unit_id
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Time_unit ;
+  rdfs:range  xsd:string ;
+  skos:prefLabel "Time unit id"@en ;
+.
+
+
+utf:unit_system
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Time_unit ;
+  rdfs:range  utf:Time_unit_ontology ;
+  skos:prefLabel "Time unit system"@en ;
+.
+
+
+utf:unit_symbol
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Time_unit ;
+  rdfs:range  xsd:string ;
+  skos:prefLabel "Time unit symbol"@en ;
+.
+
+
+utf:Time_reference
+  rdf:type rdf:Class ;
+  skos:prefLabel "Time reference calss"@en ;
+.
+
+
+utf:reference_id
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Time_reference ;
+  rdfs:range  xsd:string ;
+  skos:prefLabel "Time reference id"@en ;
+.
+
+
+utf:reference_system
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Time_reference ;
+  rdfs:range  utf:Time_framework_ontology ;
+  skos:prefLabel "Time reference frameworks"@en ;
+.
+
+
+utf:reference_version
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Time_reference ;
+  rdfs:range  xsd:string ;
+  skos:prefLabel "Time reference version"@en ;
+.
+
+
+utf:reference_boundaries
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Time_reference ;
+  rdfs:range  utf:Interval_time ;
+  skos:prefLabel "Time reference boundary"@en ;
+.
+
+
+utf:reference_dating
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Time_reference ;
+  rdfs:range  utf:Time_dating ;
+  skos:prefLabel "Time reference dating method"@en ;
+.
+
+
+utf:reference_corresponding_points
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Time_reference ;
+  rdfs:range  utf:Time_type ;
+  skos:prefLabel "Time reference correspond points"@en ;
+.
+
+
+utf:Time_dating
+  rdf:type rdf:Class ;
+  skos:prefLabel "Time dating method calss"@en ;
+.
+
+
+utf:dating_id
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Time_dating ;
+  rdfs:range  xsd:string ;
+  skos:prefLabel "Time dating method id"@en ;
+.
+
+
+utf:dating_method
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Time_dating ;
+  rdfs:range  utf:Dating_method_ontology ;
+  skos:prefLabel "Time dating methods"@en ;
+.
+
+
+utf:dating_uncertainty
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Time_dating ;
+  rdfs:range  xsd:double ;
+  skos:prefLabel "Time dating method uncertainty"@en ;
+.
+
+
+utf:dating_organization
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Time_dating ;
+  rdfs:range  xsd:string ;
+  skos:prefLabel "Time dating method organization"@en ;
+.
+
+
+utf:dating_sample
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Time_dating ;
+  rdfs:range  xsd:string ;
+  skos:prefLabel "Time dating method sample"@en ;
+.
+
+
+utf:dating_location
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Time_dating ;
+  rdfs:range  utf:Location ;
+  skos:prefLabel "Time dating location"@en ;
+.
+
+
+utf:Time_relation
+  rdf:type rdf:Class ;
+  skos:prefLabel "Time relation class"@en ;
+.
+
+
+utf:relation_id
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Time_relation ;
+  rdfs:range  xsd:string ;
+  skos:prefLabel "Time relation id"@en ;
+.
+
+
+utf:relation_system
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Time_relation ;
+  rdfs:range  utf:Time_relations ;
+  skos:prefLabel "Time relaiton ontologies"@en ;
+.
+
+
+utf:relation_description
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Time_relation ;
+  rdfs:range  xsd:string ;
+  skos:prefLabel "Time relation description"@en ;
+.
+
+
+utf:relation_subject
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Time_relation ;
+  rdfs:range  utf:Time ;
+  skos:prefLabel "Time relation subject"@en ;
+.
+
+
+utf:relation_object
+  rdf:type rdf:Property ;
+  rdfs:subPropertyOf utf:Time_relation ;
+  rdfs:range  utf:Time ;
+  skos:prefLabel "Time relation object"@en ;
+.
