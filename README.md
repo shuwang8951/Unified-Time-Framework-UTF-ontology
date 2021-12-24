@@ -1,4 +1,4 @@
-# Unified-Time-Framework-UTF-ontology
+# Unified-Time-Framework-UTF
 
 UTF ontology is a unified time framework in geoscience systems.
 
